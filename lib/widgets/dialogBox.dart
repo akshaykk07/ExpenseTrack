@@ -21,7 +21,7 @@ class DialogBox extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 470.h,
+      height: 500.h,
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(15), color: whiteone),
       child: Padding(
@@ -30,63 +30,76 @@ class DialogBox extends StatelessWidget {
           padding: const EdgeInsets.all(15).r,
           child: Form(
             key: formkey,
-            child:
-                Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  const AppText(
-                      text: "Enter Details",
-                      weight: FontWeight.w500,
-                      size: 20,
-                      textcolor: customBalck),
-                  IconButton(
-                      onPressed: () {
-                        Navigator.pop(context);
-                      },
-                      icon: const Icon(Icons.close))
-                ],
-              ),
-              CustomTextField(
-                  hint: "Enter Income",
-                  controller: incomeControllor,
-                  validator: (value) {
-                    if (value!.isEmpty || value == null) {
-                      return "Enter income";
-                    }
-                  }),
-              CustomTextField(
-                  hint: "Enter Expense",
-                  controller: expencecontrollor,
-                  validator: (value) {
-                    if (value!.isEmpty || value == null) {
-                      return "Enter expense";
-                    }
-                  }),
-              SizedBox(
-                height: 40.h,
-              ),
-              CustomButton(
-                  btnname: "Add",
-                  btntheam: customBlack1,
-                  textcolor: white,
-                  click: () {
-                    if (formkey.currentState!.validate()) {
-                      add();
-                    }
-                  }),
-              SizedBox(
-                height: 20.h,
-              ),
-              CustomButton(
-                  btnname: "Clear",
-                  btntheam: whiteone,
-                  textcolor: customBlack1,
-                  click: () {
-                    incomeControllor.clear();
-                    expencecontrollor.clear();
-                  })
-            ]),
+            child: SingleChildScrollView(
+              child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        const AppText(
+                            text: "Enter Details",
+                            weight: FontWeight.w500,
+                            size: 20,
+                            textcolor: customBalck),
+                        IconButton(
+                            onPressed: () {
+                              Navigator.pop(context);
+                            },
+                            icon: const Icon(Icons.close))
+                      ],
+                    ),
+                    CustomTextField(
+                        hint: "Enter Income",
+                        controller: incomeControllor,
+                        validator: (value) {
+                          if (value!.isEmpty || value == null) {
+                            return "Enter income";
+                          }
+                        }),
+                    CustomTextField(
+                        hint: "Enter Expense",
+                        controller: expencecontrollor,
+                        validator: (value) {
+                          if (value!.isEmpty || value == null) {
+                            return "Enter expense";
+                          }
+                        }),
+                    SizedBox(
+                      height: 40.h,
+                    ),
+                    CustomButton(
+                        btnname: "Add",
+                        btntheam: customBlack1,
+                        textcolor: white,
+                        click: () {
+                          if (formkey.currentState!.validate()) {
+                            add();
+                          }
+                        }),
+                    SizedBox(
+                      height: 20.h,
+                    ),
+                    Align(
+                      alignment: Alignment.center,
+                      child: TextButton(
+                          onPressed: () {},
+                          child: Text(
+                            "Clear",
+                            style:
+                                TextStyle(color: customBlack1, fontSize: 16.sp),
+                          )),
+                    )
+                    // CustomButton(
+                    //     btnname: "Clear",
+                    //     btntheam: whiteone,
+                    //     textcolor: customBlack1,
+                    //     click: () {
+                    //       incomeControllor.clear();
+                    //       expencecontrollor.clear();
+                    //     })
+                  ]),
+            ),
           ),
         ),
       ),
