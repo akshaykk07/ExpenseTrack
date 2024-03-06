@@ -80,24 +80,15 @@ class DialogBox extends StatelessWidget {
                     SizedBox(
                       height: 20.h,
                     ),
-                    Align(
-                      alignment: Alignment.center,
-                      child: TextButton(
-                          onPressed: () {},
-                          child: Text(
-                            "Clear",
-                            style:
-                                TextStyle(color: customBlack1, fontSize: 16.sp),
-                          )),
-                    )
-                    // CustomButton(
-                    //     btnname: "Clear",
-                    //     btntheam: whiteone,
-                    //     textcolor: customBlack1,
-                    //     click: () {
-                    //       incomeControllor.clear();
-                    //       expencecontrollor.clear();
-                    //     })
+                   
+                    CustomButton(
+                        btnname: "Clear",
+                        btntheam: whiteone,
+                        textcolor: customBlack1,
+                        click: () {
+                          incomeControllor.clear();
+                          expencecontrollor.clear();
+                        })
                   ]),
             ),
           ),
