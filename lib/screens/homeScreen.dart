@@ -173,7 +173,7 @@ class _ExpenceTrackerState extends State<ExpenceTracker> {
                       dateTime: DateTime.now()));
                   ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
                     content: Text(
-                      "item adedd successfully",
+                      "Item adedd successfully",
                       style: TextStyle(color: customBlack1),
                     ),
                     behavior: SnackBarBehavior.floating,
@@ -242,7 +242,7 @@ class _ExpenceTrackerState extends State<ExpenceTracker> {
                     Navigator.pop(context);
                     ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
                       content: Text(
-                        "item removed",
+                        "Item removed",
                         style: TextStyle(color: customBlack1),
                       ),
                       behavior: SnackBarBehavior.floating,

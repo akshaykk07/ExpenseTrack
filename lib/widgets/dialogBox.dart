@@ -21,7 +21,7 @@ class DialogBox extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 500.h,
+      height: 470.h,
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(15), color: whiteone),
       child: Padding(
