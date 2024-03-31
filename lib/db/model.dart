@@ -25,25 +25,10 @@ class Entry {
   }
 }
 
-class User {
-  int? id;
-  String? name;
-  int? phone;
-  String? img1;
-  String? img2;
-  String? img3;
-
-  User({
-    this.id,
-    required this.name,
-    required this.phone,
-    required this.img1,
-    required this.img2,
-    required this.img3,
-  });
 
 
 
 
-}
+
+
 
